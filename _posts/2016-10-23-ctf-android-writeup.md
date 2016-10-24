@@ -14,7 +14,7 @@ Ok! Không chém gió luyên thuyên nữa, trong lần đầu viết writeup n�
 <br>
 <br>
 
-# Cyber Security <br>
+# Cyber Security
 <p><h2> Simple </h2> </p> <br>
 <p>
 Challenge đưa 1 file apk NvisoVault, chạy trên emulator thì thấy có nhiều chuỗi dài.<br>
