@@ -18,8 +18,8 @@ Ok! Không chém gió luyên thuyên nữa, trong lần đầu viết writeup n�
 ## Simple <br>
 Challenge đưa 1 file apk NvisoVault, chạy trên emulator thì thấy có nhiều chuỗi dài.<br>
 Thử dùng DDMS để bắt process và xuất log file, ta xem các strings có trong đó như thế nào<br>
-![_config.yml]({{ site.baseurl }}/images/nvisovault.PNG)
-<br> <code>Ồ! Tui_Iu_Gấu_Chút</code> <br>
+![simple](https://github.com/daoduythuan/daoduythuan.github.io/blob/master/images/nvisovault.PNG)<br>
+<code>Ồ! Tui_Iu_Gấu_Chút</code> <br>
 Chắc là flag đây rồi, ez như description của chall :v <br>
 Giải còn 1 bài nữa mà không có file apk nên quỳ, 1 bài của 0ctf cũng tương tự như vậy, chỉ khác flag :D <br>
 <br>
