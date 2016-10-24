@@ -16,6 +16,7 @@ Ok! Không chém gió luyên thuyên nữa, trong lần đầu viết writeup n�
 
 # Cyber Security <br>
 ## Simple <br>
+<p>
 Challenge đưa 1 file apk NvisoVault, chạy trên emulator thì thấy có nhiều chuỗi dài.<br>
 Thử dùng DDMS để bắt process và xuất log file, ta xem các strings có trong đó như thế nào<br>
 ![_config.yml]({{ site.baseurl }}/images/nvisovault.PNG)
@@ -24,7 +25,7 @@ Thử dùng DDMS để bắt process và xuất log file, ta xem các strings c�
 Chắc là flag đây rồi, ez như description của chall :v <br>
 Giải còn 1 bài nữa mà không có file apk nên quỳ, 1 bài của 0ctf cũng tương tự như vậy, chỉ khác flag :D <br>
 <br>
-
+</p>
 
 # 0ctf <br>
 ##vezel<br>
@@ -66,7 +67,7 @@ private int getSig(String paramString)
     return 0;
   }
 {% endhighlight %}
-</p> <br>
+<br>
 Tại đây thực hiện công việc lấy signature của app rồi sau đó tính sang hashCode hay là tính hashCode rồi tính sang signature (không rành Jav lắm nên đoán như vậy :v ) <br>
 Ta chú ý tới confirm(), tại đây thực hiện việc tính toán flag - mục tiêu cuối cùng! <br>
 
@@ -93,7 +94,6 @@ python -c "print __import__('binascii').crc32(__import__('sys').stdin.read())" <
 
 Còn signature hashCode tính sao đây? Gần 3 tiếng miệt mài Google thì gặp ngay trang [này](http://androidcracking.blogspot.com.au/2010/12/getting-apk-signature-outside-of.html) có code 1 [tool](https://github.com/daoduythuan/ida-68/blob/master/Main.java) để lấy sig, liền clone về xem thử mặt mũi ra sao<br>
 ![_config.yml]({{ site.baseurl }}/images/vezel.PNG)<br>
-<p>
 Tới đây thì cũng ra flag rồi!
 </p>
 <br>
