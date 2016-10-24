@@ -25,6 +25,7 @@ Giải còn 1 bài nữa mà không có file apk nên quỳ, 1 bài của 0ctf c
 # 0ctf <br>
 ##vezel<br>
 Tiếp tục sử dụng DDMS để coi log nhưng không có gì đặc biệt nên bắt đầu decompile để xem source. Trong MainActivity ta chú ý tới getCrc() và getSig()<br>
+
 {% highlight java linenos %}
 private String getCrc()
   {
@@ -40,8 +41,10 @@ private String getCrc()
     return "";
   }
 {% endhighlight %}<br>
+
 Như vậy có thể hiểu getCrc() làm công việc tính toán Crc của classses.dex<br>
 Tiếp đến getSig()<br>
+
 {% highlight java linenos %}
 private int getSig(String paramString)
   {
@@ -58,8 +61,10 @@ private int getSig(String paramString)
     return 0;
   }
 {% endhighlight %}
+
 Tại đây thực hiện công việc lấy signature của app rồi sau đó tính sang hashCode (không rành Jav lắm nên đoán như vậy :v ) <br>
 Ta chú ý tới hàm confirm(), tại đây thực hiện việc tính toán flag - mục tiêu cuối cùng! <br>
+
 {% highlight java linenos %}
   public void confirm(View paramView)
   {
@@ -73,11 +78,14 @@ Ta chú ý tới hàm confirm(), tại đây thực hiện việc tính toán fl
     Toast.makeText(this, "0ops!", 0).show();
   }
 {% endhighlight %}
+
 Như vậy flag sẽ có dạng flag = 0CTF{hashCode() + Crc} <br>
 Crc tính được rồi, sử dụng Python ta tính được bằng cách này: <br>
+
 {% highlight python linenos %}
 python -c "print __import__('binascii').crc32(__import__('sys').stdin.read())" < classes.dex
 {% endhighlight %}
+
 Còn signature hashCode tính sao đây? Gần 3 tiếng miệt mài Google thì gặp ngay trang [này](http://androidcracking.blogspot.com.au/2010/12/getting-apk-signature-outside-of.html) có code 1 [tool](https://github.com/daoduythuan/ida-68/blob/master/Main.java) để lấy sig, liền clone về xem thử mặt mũi ra sao<br>
 ![_config.yml]({{ site.baseurl }}/images/vezel.PNG)
 Tới đây thì cũng ra flag rồi!
@@ -86,6 +94,7 @@ Tới đây thì cũng ra flag rồi!
 #Poli
 #crack-me-if-you-can
 Chall này yêu cầu nhập vào một chuỗi, nếu đúng sẽ báo đúng, nếu sai sẽ báo sai. Ý tưởng ban đầu như mọi khi là decompile và xem trong source có compare với chuỗi nào na ná với flag không.
+
 {% highlight java linenos %}
 package it.polictf2015;
 
@@ -198,7 +207,9 @@ public class LoginActivity
   public void onLoaderReset(Loader paramLoader) {}
 }
 {% endhighlight %}<br>
+
 Ta chú ý rằng có chuỗi <code>flagging{It_cannot_be_easier_than_this}</code> nhưng nhập vào thì không đúng. Tìm mấy chỗ compare thì ta thấy có điểm chẳng hạn như là <br>
+
 {% highlight java linenos %}
 private boolean a(Context paramContext, boolean paramBoolean)
   {
@@ -206,7 +217,9 @@ private boolean a(Context paramContext, boolean paramBoolean)
     return (paramContext.equalsIgnoreCase("000000000000000")) || (paramContext.equalsIgnoreCase("012345678912345")) || (paramContext.equalsIgnoreCase("e21833235b6eef10"));
   }
 {% endhighlight %}<br>
+
 có <code>equalsIgnoreCase</code> hoặc <br>
+
 {% highlight java linenos %}
 private boolean a(String paramString)
   {
@@ -218,6 +231,7 @@ private boolean a(String paramString)
     return false;
   }
   {% endhighlight %}
+
 Đù! Obfuscate vãi đạn, vô các class a,b,c coi thử ở đó làm gì. Ta chú ý các class b,c thực hiện công việc replace các kí tự trong 1 chuỗi nào đó nhưng chuỗi đó là chuỗi nào? Tìm kiếm trong các file của apk cũng không thấy gì khả quan. Đang cùng đường bế tắc, nhìn qua nhìn lại cái taskbar thì nảy ra ý tưởng load vô [IDA](https://www.facebook.com/photo.php?fbid=686146984870782&set=a.149719195180233.34248.100004264603739&type=3&theater) debug, nhưng chơi Dalvik code thì thốn thiệt. Thế là vừa dựa theo source code Java vừa bám theo code Dalvik ta đặt bp tại nhiều chỗ có compare. Đặc biệt chú ý tới chỗ obfuscate
 ![_config.yml]({{ site.baseurl }}/images/crackmeifyoucan.PNG)
 Sau nhiều lần replace thì chuỗi cuối cùng sẽ trả về v4 và được compare với v1, do đó khi debug lên ta sẽ biết giá trị của nó như thế nào
