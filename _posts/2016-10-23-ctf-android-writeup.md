@@ -27,7 +27,7 @@ Giải còn 1 bài nữa mà không có file apk nên quỳ, 1 bài của 0ctf c
 <br>
 
 
-# 0ctf <br>
+# 0ctf
 <p><h2>vezel</h2></p>
 <p>
 Tiếp tục sử dụng DDMS để coi log nhưng không có gì đặc biệt nên bắt đầu decompile để xem source. Trong MainActivity ta chú ý tới getCrc() và getSig()<br>
@@ -99,8 +99,8 @@ Tới đây thì cũng ra flag rồi!
 <br>
 <br>
 
-<p><h1>Poli</h1></p><br>
-<p><h2>crack-me-if-you-can</h2></p><br>
+<p><h1>Poli</h1></p>
+<p><h2>crack-me-if-you-can</h2></p>
 Chall này yêu cầu nhập vào một chuỗi, nếu đúng sẽ báo đúng, nếu sai sẽ báo sai. Ý tưởng ban đầu như mọi khi là decompile và xem trong source có compare với chuỗi nào na ná với flag không.
 
 {% highlight java linenos %}
@@ -244,5 +244,7 @@ private boolean a(String paramString)
 ![_config.yml]({{ site.baseurl }}/images/crackmeifyoucan.PNG)
 <p>
 Sau nhiều lần replace thì chuỗi cuối cùng sẽ trả về v4 và được compare với v1, do đó khi debug lên ta sẽ biết giá trị của nó như thế nào
-</p>
+</p>. <p>F7, F8 liên hồi cũng tới bp, xem giá trị của v1 ta có flag</p>
+![_config.yml]({{ site.baseurl }}/images/debugcrackme.PNG)<br>
+<p>flag hơi dài!</p>
 
