@@ -25,7 +25,7 @@ Giải còn 1 bài nữa mà không có file apk nên quỳ, 1 bài của 0ctf c
 # 0ctf
 ##vezel<br>
 Tiếp tục sử dụng DDMS để coi log nhưng không có gì đặc biệt nên bắt đầu decompile để xem source. Trong MainActivity ta chú ý tới getCrc() và getSig()<br>
-``` java
+{% highlight java linenos %}
 private String getCrc()
   {
     try
@@ -39,7 +39,7 @@ private String getCrc()
     }
     return "";
   }
-``` <br>
+{% endhighlight %}<br>
 Như vậy có thể hiểu getCrc() làm công việc tính toán Crc của classses.dex<br>
 Tiếp đến getSig()<br>
 ```java
