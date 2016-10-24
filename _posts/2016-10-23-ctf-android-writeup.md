@@ -25,9 +25,10 @@ Chắc là flag đây rồi, ez như description của chall :v <br>
 Giải còn 1 bài nữa mà không có file apk nên quỳ, 1 bài của 0ctf cũng tương tự như vậy, chỉ khác flag :D <br>
 <br>
 
-<p>
+
 # 0ctf <br>
 ##vezel<br>
+<p>
 Tiếp tục sử dụng DDMS để coi log nhưng không có gì đặc biệt nên bắt đầu decompile để xem source. Trong MainActivity ta chú ý tới getCrc() và getSig()<br>
 
 {% highlight java linenos %}
