@@ -6,7 +6,7 @@ title : All Ctf Android in 2015
 -"Trình tuổi --- gì mà đòi vào team này, --- có đâu nhé, đừng có mơ!"<br>
 -"[Tim không cần!](https://www.youtube.com/watch?v=7IPWNAiu4n0)"<br>
 ...<br>
-Rồi một buổi trưa hè nắng chói chang, thằng Thành VinGlad pm:<br>
+Rồi một buổi trưa hè nắng chói chang, thằng Thành GinVlad pm:<br>
 -"Hey loser, jobless!!! Mày làm hết đống chall trên [droidsec](http://www.droidsec.org/wiki/#crack-mes) rồi writeup lại đâu đó cho tao!"<br>
 Tôi xem qua một tí mới hiểu thì ra trang này tổng hợp hết lại những challenge về mobile trong các năm vừa rồi. Cũng đang rảnh rỗi nên quyết định làm lại với mục đích ôn lại kiến thức, bài vở mà thầy cô dạy ở trường cũng như hệ thống lại kiến thức cho bản thân :v<br>
 Vì số giải nhiều quá nên chỉ làm các challenge trong năm 2015, còn các giải trong năm 2016 (có chall làm ra, chall không) thì khi nào nó tổng hợp lại rồi làm lại vì nhiều quá nhớ không hết :D<br>
@@ -389,5 +389,5 @@ def check3(paramInt1,paramInt2):
 print check(236492408,99) == target
 {% endhighlight %}
 <p>Chạy đoạn script này được kết quả bao nhiêu nhập vào app and get flag </p>
-Tới đây thì đuối lắm rồi, giờ chỉ muốn hú mấy thằng bạn đi làm vài chai.<br>
+Tới đây thì đuối lắm rồi, giờ chỉ muốn hú mấy thằng bạn đi làm vài chai hoặc rủ con nhỏ muốn được bình yên đi ăn gì đó.<br>
 Lần đầu tôi viết writeup không tránh được thiếu xót, mong mọi người góp ý :)
