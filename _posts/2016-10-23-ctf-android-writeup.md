@@ -1,1 +1,4 @@
-<html>abc</html>
+---
+layout:post
+---
+abc
