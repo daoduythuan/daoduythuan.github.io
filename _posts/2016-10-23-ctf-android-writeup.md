@@ -2,7 +2,7 @@
 layout : post
 title : All Ctf Android in 2015
 ---
-Đang trong những tháng ngày nhàn cư vi và hằng đêm những tiếng nói thất thanh vẫn vang lên trong giấc mơ.
+Đang trong những tháng ngày nhàn cư vi và hằng đêm những tiếng nói thất thanh vẫn vang lên trong giấc mơ.<br>
 -"Trình em tuổi --- gì mà đòi vào công ty của chị, --- có đâu nhé, đừng có mơ!"
 -"Chỗ anh không cần!"
 ...
