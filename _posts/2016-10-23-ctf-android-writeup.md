@@ -13,7 +13,7 @@ Vì số giải nhiều quá nên chỉ làm các challenge trong năm 2015, cò
 Ok! Không chém gió luyên thuyên nữa, trong lần đầu viết writeup này sẽ kể lại quá trình ngồi chơi các giải cũ như 0ctf, Ali ctf, Cyber Security, Poli, Pragyan <br>
 <br>
 <br>
-
+<p>
 # Cyber Security <br>
 ## Simple <br>
 <p>
@@ -245,3 +245,4 @@ private boolean a(String paramString)
 Sau nhiều lần replace thì chuỗi cuối cùng sẽ trả về v4 và được compare với v1, do đó khi debug lên ta sẽ biết giá trị của nó như thế nào
 
 
+</p>
