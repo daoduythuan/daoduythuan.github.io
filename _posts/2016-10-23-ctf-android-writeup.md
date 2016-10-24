@@ -11,7 +11,7 @@ Rồi một buổi trưa hè nắng chói chang, thằng Thành VinGlad pm:<br>
 Tôi xem qua một tí mới hiểu thì ra trang này tổng hợp hết lại những challenge về mobile trong các năm vừa rồi. Cũng đang rảnh rỗi nên quyết định làm lại với mục đích ôn lại kiến thức, bài vở mà thầy cô dạy ở trường cũng như hệ thống lại kiến thức cho bản thân :v<br>
 Vì số giải nhiều quá nên chỉ làm các challenge trong năm 2015, còn các giải trong năm 2016 (có chall làm ra, chall không) thì khi nào nó tổng hợp lại rồi làm lại vì nhiều quá nhớ không hết :D<br>
 Ok! Không chém gió luyên thuyên nữa, trong lần đầu viết writeup này sẽ kể lại quá trình ngồi chơi các giải cũ như là <br>
-<A HREF="#0ctf">0Ctf</A>
+<A HREF="#0ctf"></A>[0ctf](https://daoduythuan.github.io/ctf-android-writeup/#0ctf)
 <br>
 <br>
 <br>
