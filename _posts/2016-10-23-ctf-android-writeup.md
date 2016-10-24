@@ -15,7 +15,7 @@ Ok! Không chém gió luyên thuyên nữa, trong lần đầu viết writeup n�
 <br>
 <p>
 # Cyber Security <br>
-## Simple
+## Simple <br>
 Challenge đưa 1 file apk NvisoVault, chạy trên emulator thì thấy có nhiều chuỗi dài.<br>
 Thử dùng DDMS để bắt process và xuất log file, ta xem các strings có trong đó như thế nào
 ![_config.yml]({{ site.baseurl }}/images/nvisovault.PNG)
@@ -24,7 +24,7 @@ Chắc là flag đây rồi, ez như description của chall :v <br>
 Giải còn 1 bài nữa mà không có file apk nên quỳ, 1 bài của 0ctf cũng tương tự như vậy, chỉ khác flag :D <br>
 <br>
 </p>
-
+<p>
 # 0ctf <br>
 ##vezel<br>
 Tiếp tục sử dụng DDMS để coi log nhưng không có gì đặc biệt nên bắt đầu decompile để xem source. Trong MainActivity ta chú ý tới getCrc() và getSig()<br>
@@ -64,7 +64,7 @@ private int getSig(String paramString)
     return 0;
   }
 {% endhighlight %}
-
+</p>
 Tại đây thực hiện công việc lấy signature của app rồi sau đó tính sang hashCode (không rành Jav lắm nên đoán như vậy :v ) <br>
 Ta chú ý tới hàm confirm(), tại đây thực hiện việc tính toán flag - mục tiêu cuối cùng! <br>
 
