@@ -28,7 +28,7 @@ Giải còn 1 bài nữa mà không có file apk nên quỳ, 1 bài của 0ctf c
 
 
 # 0ctf <br>
-<p><h2>vezel</h2></p><br>
+<p><h2>vezel</h2></p>
 <p>
 Tiếp tục sử dụng DDMS để coi log nhưng không có gì đặc biệt nên bắt đầu decompile để xem source. Trong MainActivity ta chú ý tới getCrc() và getSig()<br>
 
