@@ -65,7 +65,7 @@ private int getSig(String paramString)
     return 0;
   }
 {% endhighlight %}
-</p>
+</p> <br>
 Tại đây thực hiện công việc lấy signature của app rồi sau đó tính sang hashCode hay là tính hashCode rồi tính sang signature (không rành Jav lắm nên đoán như vậy :v ) <br>
 Ta chú ý tới confirm(), tại đây thực hiện việc tính toán flag - mục tiêu cuối cùng! <br>
 
