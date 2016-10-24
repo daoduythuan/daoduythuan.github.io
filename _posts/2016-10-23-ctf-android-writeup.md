@@ -66,8 +66,8 @@ private int getSig(String paramString)
   }
 {% endhighlight %}
 </p>
-Tại đây thực hiện công việc lấy signature của app rồi sau đó tính sang hashCode (không rành Jav lắm nên đoán như vậy :v ) <br>
-Ta chú ý tới hàm confirm(), tại đây thực hiện việc tính toán flag - mục tiêu cuối cùng! <br>
+Tại đây thực hiện công việc lấy signature của app rồi sau đó tính sang hashCode hay là tính hashCode rồi tính sang signature (không rành Jav lắm nên đoán như vậy :v ) <br>
+Ta chú ý tới confirm(), tại đây thực hiện việc tính toán flag - mục tiêu cuối cùng! <br>
 
 {% highlight java linenos %}
   public void confirm(View paramView)
