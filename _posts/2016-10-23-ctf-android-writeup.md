@@ -95,6 +95,7 @@ Còn signature hashCode tính sao đây? Gần 3 tiếng miệt mài Google thì
 Tới đây thì cũng ra flag rồi!
 <br>
 <br>
+<p>
 #Poli<br>
 #crack-me-if-you-can<br>
 Chall này yêu cầu nhập vào một chuỗi, nếu đúng sẽ báo đúng, nếu sai sẽ báo sai. Ý tưởng ban đầu như mọi khi là decompile và xem trong source có compare với chuỗi nào na ná với flag không.
@@ -240,3 +241,4 @@ private boolean a(String paramString)
 ![_config.yml]({{ site.baseurl }}/images/crackmeifyoucan.PNG)
 Sau nhiều lần replace thì chuỗi cuối cùng sẽ trả về v4 và được compare với v1, do đó khi debug lên ta sẽ biết giá trị của nó như thế nào
 
+</p>
