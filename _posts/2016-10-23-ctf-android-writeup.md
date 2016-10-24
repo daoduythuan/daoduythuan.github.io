@@ -21,7 +21,7 @@ Challenge đưa 1 file apk NvisoVault, chạy trên emulator thì thấy có nhi
 Thử dùng DDMS để bắt process và xuất log file, ta xem các strings có trong đó như thế nào<br> </p>
 ![_config.yml]({{ site.baseurl }}/images/nvisovault.PNG)
 <br>
-<code>Ồ! Tui_Iu_Gấu_Chút</code> <br>
+<p>Ồ!</p><code>Tui_Iu_Pia_Kọp</code> <br>
 Chắc là flag đây rồi, ez như description của chall :v <br>
 Giải còn 1 bài nữa mà không có file apk nên quỳ, 1 bài của 0ctf cũng tương tự như vậy, chỉ khác flag :D <br>
 <br>
@@ -246,3 +246,95 @@ Sau nhiều lần replace thì chuỗi cuối cùng sẽ trả về v4 và đư�
 ![_config.yml]({{ site.baseurl }}/images/debugcrackme.PNG)<br>
 <p>flag hơi dài!</p>
 
+<p><h1>Ali</h1><p>
+<p><h2>LoopAndLoop</h2><p>
+Decompile apk ta chú ý tới hàm main và folder lib chứa file .so<br>
+Kiểm tra hàm main ta thấy nó thực hiện công việc kiểm tra các số int :v
+
+{% highlight java linenos %}
+public void main() {
+    if (this.check(i, 99) == 1835996258) {
+        localTextView1.setText("The flag is:");
+        localTextView2.setText("alictf{" + MainActivity.this.stringFromJNI2(i) + "}");
+        return;
+    }
+}
+
+public native int chec(int paramInt1, int paramInt2);
+
+public int check(int paramInt1, int paramInt2) {
+    return chec(paramInt1, paramInt2);
+}
+
+public int check1(int paramInt1, int paramInt2) {
+    int j = 1;
+    int i = paramInt1;
+    paramInt1 = j;
+    while (paramInt1 < 100) {
+      i += paramInt1;
+      paramInt1 += 1;
+    }
+    return chec(i, paramInt2);
+}
+
+public int check2(int paramInt1, int paramInt2) {
+    if (paramInt2 % 2 == 0) {
+      j = 1;
+      i = paramInt1;
+      paramInt1 = j;
+      while (paramInt1 < 1000) {
+        i += paramInt1;
+        paramInt1 += 1;
+      }
+      return chec(i, paramInt2);
+    }
+    int j = 1;
+    int i = paramInt1;
+    paramInt1 = j;
+    while (paramInt1 < 1000) {
+      i -= paramInt1;
+      paramInt1 += 1;
+    }
+    return chec(i, paramInt2);
+}
+
+public int check3(int paramInt1, int paramInt2) {
+    int j = 1;
+    int i = paramInt1;
+    paramInt1 = j;
+    while (paramInt1 < 10000) {
+      i += paramInt1;
+      paramInt1 += 1;
+    }
+    return chec(i, paramInt2);
+}
+{% endhighlight %}
+<p> Tiếp tục kiểm tra các lib trong .so </p>
+{% highlight java linenos %}
+int __fastcall Java_net_bluelotus_tomorrow_easyandroid_MainActivity_chec(int a1, int a2, int a3, int a4)
+{
+  int v4; // r4@1
+  int v5; // r7@1
+  int result; // r0@2
+  int v7; // [sp+Ch] [bp-34h]@1
+  int v8; // [sp+10h] [bp-30h]@1
+  int v9; // [sp+14h] [bp-2Ch]@1
+  int v10; // [sp+1Ch] [bp-24h]@1
+  int v11; // [sp+20h] [bp-20h]@1
+  int v12; // [sp+24h] [bp-1Ch]@1
+
+  v9 = a2;
+  v8 = a4;
+  v4 = a1;
+  v7 = a3;
+  v5 = (*(int (**)(void))(*(_DWORD *)a1 + 24))();
+  v10 = _JNIEnv::GetMethodID(v4, v5, "check1", "(II)I");
+  v11 = _JNIEnv::GetMethodID(v4, v5, "check2", "(II)I");
+  v12 = _JNIEnv::GetMethodID(v4, v5, "check3", "(II)I");
+  if ( v8 - 1 <= 0 )
+    result = v7;
+  else
+    result = _JNIEnv::CallIntMethod(v4, v9, *(&v10 + 2 * v8 % 3));
+  return result;
+}
+{% endhighlight %}
