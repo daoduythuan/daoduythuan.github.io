@@ -31,7 +31,7 @@ Giải còn 1 bài nữa mà không có file apk nên quỳ, 1 bài của 0ctf c
 <p><h2>vezel</h2></p>
 <p>
 Tiếp tục sử dụng DDMS để coi log nhưng không có gì đặc biệt nên bắt đầu decompile để xem source. Trong MainActivity ta chú ý tới getCrc() và getSig()<br>
-
+</p>
 {% highlight java linenos %}
 private String getCrc()
   {
@@ -48,9 +48,9 @@ private String getCrc()
   }
 {% endhighlight %}<br>
 
-Như vậy có thể hiểu getCrc() làm công việc tính toán Crc của classses.dex<br>
+<p>Như vậy có thể hiểu getCrc() làm công việc tính toán Crc của classses.dex<br>
 Tiếp đến getSig()<br>
-
+</p>
 {% highlight java linenos %}
 private int getSig(String paramString)
   {
@@ -68,9 +68,10 @@ private int getSig(String paramString)
   }
 {% endhighlight %}
 <br>
+<p>
 Tại đây thực hiện công việc lấy signature của app rồi sau đó tính sang hashCode hay là tính hashCode rồi tính sang signature (không rành Jav lắm nên đoán như vậy :v ) <br>
 Ta chú ý tới confirm(), tại đây thực hiện việc tính toán flag - mục tiêu cuối cùng! <br>
-
+</p>
 {% highlight java linenos %}
   public void confirm(View paramView)
   {
@@ -84,15 +85,15 @@ Ta chú ý tới confirm(), tại đây thực hiện việc tính toán flag - 
     Toast.makeText(this, "0ops!", 0).show();
   }
 {% endhighlight %}
-
+<p>
 Như vậy flag sẽ có dạng flag = 0CTF{hashCode() + Crc} <br>
 Crc tính được rồi, sử dụng Python ta tính được bằng cách này: <br>
-
+</p>
 {% highlight python linenos %}
 python -c "print __import__('binascii').crc32(__import__('sys').stdin.read())" < classes.dex
 {% endhighlight %}
-
-<p>Còn signature hashCode tính sao đây? Gần 3 tiếng miệt mài Google thì gặp ngay trang</p> [này](http://androidcracking.blogspot.com.au/2010/12/getting-apk-signature-outside-of.html) <p> có code 1<p> [tool](https://github.com/daoduythuan/ida-68/blob/master/Main.java) để lấy sig, liền clone về xem thử mặt mũi ra sao
+<p>
+Còn signature hashCode tính sao đây? Gần 3 tiếng miệt mài Google thì gặp ngay trang</p> [này](http://androidcracking.blogspot.com.au/2010/12/getting-apk-signature-outside-of.html) <p> có code 1<p> [tool](https://github.com/daoduythuan/ida-68/blob/master/Main.java) để lấy sig, liền clone về xem thử mặt mũi ra sao
 ![_config.yml]({{ site.baseurl }}/images/vezel.PNG)<br>
 Tới đây thì cũng ra flag rồi!
 <br>
