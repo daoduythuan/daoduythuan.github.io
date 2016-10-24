@@ -15,7 +15,7 @@ Ok! Không chém gió luyên thuyên nữa, trong lần đầu viết writeup n�
 <br>
 
 # Cyber Security
-<p><h2> Simple </h2> </p> <br>
+<p><h2> Simple </h2> </p>
 <p>
 Challenge đưa 1 file apk NvisoVault, chạy trên emulator thì thấy có nhiều chuỗi dài.<br>
 Thử dùng DDMS để bắt process và xuất log file, ta xem các strings có trong đó như thế nào<br> </p>
