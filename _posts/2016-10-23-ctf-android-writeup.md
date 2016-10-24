@@ -28,7 +28,7 @@ Giải còn 1 bài nữa mà không có file apk nên quỳ, 1 bài của 0ctf c
 
 
 # 0ctf <br>
-##vezel<br>
+<p><h2>vezel</h2></p><br>
 <p>
 Tiếp tục sử dụng DDMS để coi log nhưng không có gì đặc biệt nên bắt đầu decompile để xem source. Trong MainActivity ta chú ý tới getCrc() và getSig()<br>
 
@@ -99,8 +99,8 @@ Tới đây thì cũng ra flag rồi!
 <br>
 <br>
 
-#Poli<br>
-#crack-me-if-you-can<br>
+<p><h1>Poli</h1></p><br>
+<p><h2>crack-me-if-you-can</h2></p><br>
 Chall này yêu cầu nhập vào một chuỗi, nếu đúng sẽ báo đúng, nếu sai sẽ báo sai. Ý tưởng ban đầu như mọi khi là decompile và xem trong source có compare với chuỗi nào na ná với flag không.
 
 {% highlight java linenos %}
