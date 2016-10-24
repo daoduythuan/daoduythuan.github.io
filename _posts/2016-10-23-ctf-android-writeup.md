@@ -13,17 +13,18 @@ Vì số giải nhiều quá nên chỉ làm các challenge trong năm 2015, cò
 Ok! Không chém gió luyên thuyên nữa, trong lần đầu viết writeup này sẽ kể lại quá trình ngồi chơi các giải cũ như 0ctf, Ali ctf, Cyber Security, Poli, Pragyan <br>
 <br>
 <br>
-<p>
+
 # Cyber Security <br>
 ## Simple <br>
 Challenge đưa 1 file apk NvisoVault, chạy trên emulator thì thấy có nhiều chuỗi dài.<br>
 Thử dùng DDMS để bắt process và xuất log file, ta xem các strings có trong đó như thế nào<br>
-![simple](https://github.com/daoduythuan/daoduythuan.github.io/blob/master/images/nvisovault.PNG)<br>
+![_config.yml]({{ site.baseurl }}/images/vezel.PNG)
+<br>
 <code>Ồ! Tui_Iu_Gấu_Chút</code> <br>
 Chắc là flag đây rồi, ez như description của chall :v <br>
 Giải còn 1 bài nữa mà không có file apk nên quỳ, 1 bài của 0ctf cũng tương tự như vậy, chỉ khác flag :D <br>
 <br>
-</p>
+
 <p>
 # 0ctf <br>
 ##vezel<br>
