@@ -14,7 +14,211 @@ Ok! Không chém gió luyên thuyên nữa, trong lần đầu viết writeup n�
 <br>
 <br>
 # Cyber Security <br>
-## Simple <br>
+## Simple
 Challenge đưa 1 file apk NvisoVault, chạy trên emulator thì thấy có nhiều chuỗi dài.<br>
 Thử dùng DDMS để bắt process và xuất log file, ta xem các strings có trong đó như thế nào
 ![nviso vault](https://github.com/daoduythuan/daoduythuan.github.io/blob/master/images/nvisovault.PNG)
+<br> <code>Ồ! Tui_Iu_Gấu_Chút</code> <br>
+Chắc là flag đây rồi, ez như description của chall :v <br>
+Giải còn 1 bài nữa mà không có file apk nên quỳ, 1 bài của 0ctf cũng tương tự như vậy, chỉ khác flag :D <br>
+<br>
+# 0ctf
+##vezel<br>
+Tiếp tục sử dụng DDMS để coi log nhưng không có gì đặc biệt nên bắt đầu decompile để xem source. Trong MainActivity ta chú ý tới getCrc() và getSig()<br>
+``` java
+private String getCrc()
+  {
+    try
+    {
+      long l = new ZipFile(getApplicationContext().getPackageCodePath()).getEntry("classes.dex").getCrc();
+      return String.valueOf(l);
+    }
+    catch (Exception localException)
+    {
+      localException.printStackTrace();
+    }
+    return "";
+  }
+``` <br>
+Như vậy có thể hiểu getCrc() làm công việc tính toán Crc của classses.dex<br>
+Tiếp đến getSig()<br>
+```java
+private int getSig(String paramString)
+  {
+    PackageManager localPackageManager = getPackageManager();
+    try
+    {
+      int i = localPackageManager.getPackageInfo(paramString, 64).signatures[0].toCharsString().hashCode();
+      return i;
+    }
+    catch (Exception paramString)
+    {
+      paramString.printStackTrace();
+    }
+    return 0;
+  }
+```
+Tại đây thực hiện công việc lấy signature của app rồi sau đó tính sang hashCode (không rành Jav lắm nên đoán như vậy :v ) <br>
+Ta chú ý tới hàm confirm(), tại đây thực hiện việc tính toán flag - mục tiêu cuối cùng! <br>
+```java
+  public void confirm(View paramView)
+  {
+    int i = getSig(getPackageName());
+    paramView = getCrc();
+    if (("0CTF{" + String.valueOf(i) + paramView + "}").equals(this.et.getText().toString()))
+    {
+      Toast.makeText(this, "Yes!", 0).show();
+      return;
+    }
+    Toast.makeText(this, "0ops!", 0).show();
+  }
+```
+Như vậy flag sẽ có dạng flag = 0CTF{hashCode() + Crc} <br>
+Crc tính được rồi, sử dụng Python ta tính được bằng cách này: <br>
+```python 
+python -c "print __import__('binascii').crc32(__import__('sys').stdin.read())" < classes.dex
+```
+Còn signature hashCode tính sao đây? Gần 3 tiếng miệt mài Google thì gặp ngay trang [này](http://androidcracking.blogspot.com.au/2010/12/getting-apk-signature-outside-of.html) có code 1 [tool](https://github.com/daoduythuan/ida-68/blob/master/Main.java) để lấy sig, liền clone về xem thử mặt mũi ra sao<br>
+![vezel](https://github.com/daoduythuan/daoduythuan.github.io/blob/master/images/vezel.PNG)
+Tới đây thì cũng ra flag rồi!
+<br>
+<br>
+#Poli
+#crack-me-if-you-can
+Chall này yêu cầu nhập vào một chuỗi, nếu đúng sẽ báo đúng, nếu sai sẽ báo sai. Ý tưởng ban đầu như mọi khi là decompile và xem trong source có compare với chuỗi nào na ná với flag không.
+```java
+package it.polictf2015;
+
+import android.app.Activity;
+import android.app.LoaderManager.LoaderCallbacks;
+import android.content.Context;
+import android.content.Loader;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class LoginActivity
+  extends Activity
+  implements LoaderManager.LoaderCallbacks
+{
+  private EditText a;
+  private View b;
+  
+  private void a()
+  {
+    EditText localEditText1 = null;
+    this.a.setError(null);
+    String str = this.a.getText().toString();
+    int i = 0;
+    if (TextUtils.isEmpty(str))
+    {
+      this.a.setError(getString(2131492923));
+      localEditText1 = this.a;
+      i = 1;
+    }
+    EditText localEditText2 = localEditText1;
+    int j = i;
+    if (!TextUtils.isEmpty(str))
+    {
+      localEditText2 = localEditText1;
+      j = i;
+      if (!a(str))
+      {
+        this.a.setError(getString(2131492919));
+        localEditText2 = this.a;
+        j = 1;
+      }
+    }
+    if (j != 0) {
+      localEditText2.requestFocus();
+    }
+  }
+  
+  private boolean a(Context paramContext, double paramDouble)
+  {
+    return (paramDouble == 3.41D) || (((TelephonyManager)paramContext.getSystemService("phone")).getSubscriberId().equalsIgnoreCase("310260000000000"));
+  }
+  
+  private boolean a(Context paramContext, int paramInt)
+  {
+    return (paramInt == 2) || (((TelephonyManager)paramContext.getSystemService("phone")).getNetworkOperatorName().equalsIgnoreCase("android"));
+  }
+  
+  private boolean a(Context paramContext, String paramString)
+  {
+    paramString.replace("flagging", "flag");
+    return ((TelephonyManager)paramContext.getSystemService("phone")).getLine1Number().startsWith("1555521");
+  }
+  
+  private boolean a(Context paramContext, boolean paramBoolean)
+  {
+    paramContext = ((TelephonyManager)paramContext.getSystemService("phone")).getDeviceId();
+    return (paramContext.equalsIgnoreCase("000000000000000")) || (paramContext.equalsIgnoreCase("012345678912345")) || (paramContext.equalsIgnoreCase("e21833235b6eef10"));
+  }
+  
+  private boolean a(String paramString)
+  {
+    if (paramString.equals(c.a(b.a(b.b(b.c(b.d(b.g(b.h(b.e(b.f(b.i(c.c(c.b(c.d(getString(2131492920))))))))))))))))
+    {
+      Toast.makeText(getApplicationContext(), getString(2131492924), 1).show();
+      return true;
+    }
+    return false;
+  }
+  
+  public void a(Loader paramLoader, Cursor paramCursor) {}
+  
+  protected void onCreate(Bundle paramBundle)
+  {
+    super.onCreate(paramBundle);
+    setContentView(2130968599);
+    if ((a(getApplicationContext(), 2)) || (a(getApplicationContext(), "flagging{It_cannot_be_easier_than_this}")) || (a(getApplicationContext(), false)) || (a(getApplicationContext(), 2.78D))) {
+      Toast.makeText(getApplicationContext(), getString(2131492925), 1).show();
+    }
+    for (;;)
+    {
+      this.a = ((EditText)findViewById(2131361877));
+      ((Button)findViewById(2131361878)).setOnClickListener(new a(this));
+      this.b = findViewById(2131361875);
+      return;
+      Toast.makeText(getApplicationContext(), getString(2131492922), 1).show();
+    }
+  }
+  
+  public Loader onCreateLoader(int paramInt, Bundle paramBundle)
+  {
+    return null;
+  }
+  
+  public void onLoaderReset(Loader paramLoader) {}
+}
+```<br>
+Ta chú ý rằng có chuỗi <code>flagging{It_cannot_be_easier_than_this}</code> nhưng nhập vào thì không đúng. Tìm mấy chỗ compare thì ta thấy có điểm chẳng hạn như là 
+```java
+private boolean a(Context paramContext, boolean paramBoolean)
+  {
+    paramContext = ((TelephonyManager)paramContext.getSystemService("phone")).getDeviceId();
+    return (paramContext.equalsIgnoreCase("000000000000000")) || (paramContext.equalsIgnoreCase("012345678912345")) || (paramContext.equalsIgnoreCase("e21833235b6eef10"));
+  }
+```<br>
+có <code>equalsIgnoreCase</code> hoặc <br>
+```java
+private boolean a(String paramString)
+  {
+    if (paramString.equals(c.a(b.a(b.b(b.c(b.d(b.g(b.h(b.e(b.f(b.i(c.c(c.b(c.d(getString(2131492920))))))))))))))))
+    {
+      Toast.makeText(getApplicationContext(), getString(2131492924), 1).show();
+      return true;
+    }
+    return false;
+  }
+```
+Đù! Obfuscate vãi đạn, vô các class a,b,c coi thử ở đó làm gì. Ta chú ý các class b,c thực hiện công việc replace các kí tự trong 1 chuỗi nào đó nhưng chuỗi đó là chuỗi nào? Tìm kiếm trong các file của apk cũng không thấy gì khả quan. Đang cùng đường bế tắc, nhìn qua nhìn lại cái taskbar thì nảy ra ý tưởng load vô [IDA](https://www.facebook.com/photo.php?fbid=686146984870782&set=a.149719195180233.34248.100004264603739&type=3&theater) debug, nhưng chơi Dalvik code thì thốn thiệt. Thế là vừa dựa theo source code Java vừa bám theo code Dalvik ta đặt bp tại nhiều chỗ có compare. Đặc biệt chú ý tới chỗ obfuscate
+![crackme](https://github.com/daoduythuan/daoduythuan.github.io/blob/master/images/crackmeifyoucan.PNG)
+Sau nhiều lần replace thì chuỗi cuối cùng sẽ trả về v4 và được compare với v1, do đó khi debug lên ta sẽ biết giá trị của nó như thế nào
+![debugcrackme]()
