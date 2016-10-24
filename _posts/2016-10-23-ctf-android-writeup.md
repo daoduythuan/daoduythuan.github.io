@@ -91,8 +91,10 @@ python -c "print __import__('binascii').crc32(__import__('sys').stdin.read())" <
 {% endhighlight %}
 
 Còn signature hashCode tính sao đây? Gần 3 tiếng miệt mài Google thì gặp ngay trang [này](http://androidcracking.blogspot.com.au/2010/12/getting-apk-signature-outside-of.html) có code 1 [tool](https://github.com/daoduythuan/ida-68/blob/master/Main.java) để lấy sig, liền clone về xem thử mặt mũi ra sao<br>
-![_config.yml]({{ site.baseurl }}/images/vezel.PNG)
+![_config.yml]({{ site.baseurl }}/images/vezel.PNG)<br>
+<p>
 Tới đây thì cũng ra flag rồi!
+</p>
 <br>
 <br>
 <p>
