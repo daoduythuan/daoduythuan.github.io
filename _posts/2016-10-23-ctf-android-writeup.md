@@ -93,7 +93,7 @@ Crc tính được rồi, sử dụng Python ta tính được bằng cách này
 python -c "print __import__('binascii').crc32(__import__('sys').stdin.read())" < classes.dex
 {% endhighlight %}
 <p>
-Còn signature hashCode tính sao đây? Gần 3 tiếng miệt mài Google thì gặp ngay trang</p> [này](http://androidcracking.blogspot.com.au/2010/12/getting-apk-signature-outside-of.html) <p> có code 1<p> [tool](https://github.com/daoduythuan/ida-68/blob/master/Main.java) để lấy sig, liền clone về xem thử mặt mũi ra sao
+Còn signature hashCode tính sao đây? Gần 3 tiếng miệt mài Google thì gặp ngay trang</p> [này](http://androidcracking.blogspot.com.au/2010/12/getting-apk-signature-outside-of.html) có code 1 [tool](https://github.com/daoduythuan/ida-68/blob/master/Main.java) để lấy sig, liền clone về xem thử mặt mũi ra sao
 ![_config.yml]({{ site.baseurl }}/images/vezel.PNG)<br>
 Tới đây thì cũng ra flag rồi!
 <br>
