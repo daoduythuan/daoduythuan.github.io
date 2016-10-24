@@ -3,8 +3,8 @@ layout : post
 title : All Ctf Android in 2015
 ---
 Đang trong những tháng ngày nhàn cư vi và hằng đêm những tiếng nói thất thanh vẫn vang lên trong giấc mơ.<br>
--"Trình em tuổi --- gì mà đòi vào công ty của chị, --- có đâu nhé, đừng có mơ!"<br>
--"Chỗ anh không cần!"<br>
+-"Trình tuổi --- gì mà đòi vào team này, --- có đâu nhé, đừng có mơ!"<br>
+-"[Tim hông cần!](https://www.youtube.com/watch?v=7IPWNAiu4n0)"<br>
 ...<br>
 Rồi một buổi trưa hè nắng chói chang, thằng Thành VinGlad pm:<br>
 -"Hey loser, jobless!!! Mày làm hết đống chall trên [droidsec](http://www.droidsec.org/wiki/#crack-mes) rồi writeup lại đâu đó cho tao!"<br>
