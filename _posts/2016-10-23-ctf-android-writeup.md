@@ -239,7 +239,7 @@ private boolean a(String paramString)
   }
   {% endhighlight %}
 <p>
-Đù! Obfuscate vãi đạn, vô các class a,b,c coi thử ở đó làm gì. Ta chú ý các class b,c thực hiện công việc replace các kí tự trong 1 chuỗi nào đó nhưng chuỗi đó là chuỗi nào? Tìm kiếm trong các file của apk cũng không thấy gì khả quan. Đang cùng đường bế tắc, nhìn qua nhìn lại cái taskbar thì nảy ra ý tưởng load vô [IDA](https://www.facebook.com/photo.php?fbid=686146984870782&set=a.149719195180233.34248.100004264603739&type=3&theater) debug, nhưng chơi Dalvik code thì thốn thiệt. Thế là vừa dựa theo source code Java vừa bám theo code Dalvik ta đặt bp tại nhiều chỗ có compare. Đặc biệt chú ý tới chỗ obfuscate
+Đù! Obfuscate vãi đạn, vô các class a,b,c coi thử ở đó làm gì. Ta chú ý các class b,c thực hiện công việc replace các kí tự trong 1 chuỗi nào đó nhưng chuỗi đó là chuỗi nào? Tìm kiếm trong các file của apk cũng không thấy gì khả quan. Đang cùng đường bế tắc, nhìn qua nhìn lại cái taskbar thì nảy ra ý tưởng load vô [IDA](https://www.facebook.com/photo.php?fbid=686146984870782&set=a.149719195180233.34248.100004264603739&type=3&theater) debug, nhưng chơi Dalvik code thì thốn thiệt. Thế là vừa dựa theo source code Java vừa bám theo code Dalvik ta đặt bp tại nhiều chỗ có compare. Đặc biệt chú ý tới chỗ obfuscate <br>
 ![_config.yml]({{ site.baseurl }}/images/crackmeifyoucan.PNG)
 Sau nhiều lần replace thì chuỗi cuối cùng sẽ trả về v4 và được compare với v1, do đó khi debug lên ta sẽ biết giá trị của nó như thế nào
 </p>
