@@ -22,13 +22,13 @@ name=pikachu&name={0.__class__.pykemon}
 
 Vì sao lại inject như vậy?<br>
 Vì:<br>
-1 Đọc source code thì ta thấy tại line 19 như sau<br>
+1 . Đọc source code thì ta thấy tại line 19 như sau<br>
 
 {% highlight python linenos %}return "Successfully renamed to:\n" + new_name.format(p)
 {% endhighlight %}
 
 Ok, như vậy là đã gọi format()<br>
-2 Có 1 dict khai báo các pokemon:
+2 . Có 1 dict khai báo các pokemon:
 {% highlight python linenos %}pykemon = [
             [100, 'Pydiot', 'Pydiot','images/pydiot.png', 'Pydiot is an avian Pykamon with large wings, sharp talons, and a short, hooked beak'],
             [90, 'Pytata', 'Pytata', 'images/pytata.png', 'Pytata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around.'],
