@@ -15,15 +15,19 @@ Với giải PCTF 2017 lần này tôi gặp một kiến thức cần phải gh
 'c, b, a'
 {% endhighlight %}
 Như vậy ta có thể "truy cập" giá trị dựa vào vị trí của biến :)) và có thể lấy được các thuộc tính của biến đó. Tương tự như vậy, trong bài Pykemon sau khi bắt được một pet thì inject F0rm4t 5trin9 vào như sau:
+
 {% highlight python linenos %}
 name=pikachu&name={0.__class__.pykemon}
 {% endhighlight %}
+
 Vì sao lại injec như vậy?<br>
 Vì:<br>
 1 Đọc source code thì ta thấy tại line 19 như sau<br>
+
 {% highlight python linenos %}
 return "Successfully renamed to:\n" + new_name.format(p)
 {% highlight python linenos %}
+
 Ok, như vậy là đã gọi format()
 2 Có 1 dict khai báo các pokemon:
 {% highlight python linenos %}
