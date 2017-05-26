@@ -24,14 +24,12 @@ Vì sao lại injec như vậy?<br>
 Vì:<br>
 1 Đọc source code thì ta thấy tại line 19 như sau<br>
 
-{% highlight python linenos %}
-return "Successfully renamed to:\n" + new_name.format(p)
+{% highlight python linenos %}return "Successfully renamed to:\n" + new_name.format(p)
 {% highlight python linenos %}
 
 Ok, như vậy là đã gọi format()
 2 Có 1 dict khai báo các pokemon:
-{% highlight python linenos %}
-pykemon = [
+{% highlight python linenos %}pykemon = [
             [100, 'Pydiot', 'Pydiot','images/pydiot.png', 'Pydiot is an avian Pykamon with large wings, sharp talons, and a short, hooked beak'],
             [90, 'Pytata', 'Pytata', 'images/pytata.png', 'Pytata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around.'],
             [80, 'Pyliwag', 'Pyliwag', 'images/pyliwag.png', 'Pyliwag resembles a blue, spherical tadpole. It has large eyes and pink lips.'],
@@ -43,7 +41,6 @@ pykemon = [
             [20, 'Pyrodactyl', 'Pyrodactyl', 'images/pyrodactyl.png','Pyrodactyl is a Pykamon from the age of dinosaurs'],
             [10, 'Pytwo', 'Pytwo', 'images/pytwo.png','Pytwo is a Pykamon created by genetic manipulation'],
             [0, 'FLAG', 'FLAG','images/flag.png', 'PCTF{XXXXX}']
-            ]
-{% endhighlight %}
+            ]{% endhighlight %}
 Như vậy đã rõ, mục đích cuối cùng của chúng ta là lợi dụng format string để leak flag trong dict pykemon.
 Một cách khai thác thật tuyệt vời và sáng tạo. Một lần nữa, tư duy lập trình được đặt lên hàng đâu.
