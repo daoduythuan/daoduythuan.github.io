@@ -8,7 +8,7 @@ I tested each one of input with a single quote and noticed that an error pops up
 ![_config.yml]({{ site.baseurl }}/images/2-pwn2win.png)
 
 Next, I wanna know the dbms is running. As the above pic, I noted "HLQ", it means that The Hibernate Query Language, some kind of a modified SQL with some restrictions. I tried with my payload:
-![_config.yml]({{ site.baseurl }}/images/3-pwn2win.png)
+![_config.yml]({{ site.baseurl }}/images/3-pwn2win.png) <br>
 OK! Postgres!
 After hours googling and read Postgres's doc, I found somethings interested: [Postgres doc](https://www.postgresql.org/message-id/CAHHcreqSb%3Drx9pKCfc5vKL1eD4PU7-3_qEcfiANT4p_2%3DaSTjQ%40mail.gmail.com)
 And 
