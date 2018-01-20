@@ -44,4 +44,3 @@ Ok, như vậy là đã gọi format()<br>
             ]{% endhighlight %}
 Như vậy đã rõ, mục đích cuối cùng của chúng ta là lợi dụng format string để leak flag trong dict pykemon.
 Một cách khai thác thật tuyệt vời và sáng tạo. Một lần nữa, tư duy lập trình được đặt lên hàng đâu.<br>
-Thời gian bài viết xuất hiện là ngày 3-3, tuy nhiên tôi chẳng nhớ là ngày nào nên để như vậy :v
