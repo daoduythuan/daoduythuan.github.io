@@ -1,3 +1,7 @@
+---
+layout : post
+title : knock.xss.moe
+---
 All solution
 Ranking #41
 {% highlight html linenos %}
