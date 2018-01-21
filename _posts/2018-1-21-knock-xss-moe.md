@@ -3,8 +3,8 @@ layout : post
 title : knock.xss.moe
 ---
 
-All solution<br>
-Ranking #41 J3d1
+
+Ranking #41 <h1>J3d1</h1>
 
 stage3:
 ```
