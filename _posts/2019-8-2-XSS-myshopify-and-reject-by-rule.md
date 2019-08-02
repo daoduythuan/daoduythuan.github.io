@@ -6,4 +6,4 @@ Maybe it is a store-xss but Shopify's rule does not accept it :| <br>
 ![_config.yml]({{ site.baseurl }}/images/camphoto_959030623.jpg) <br>
 In my opinion, when a hacker has admin's privilege he can hijack other visitor when they shopping LOL . <br>
 Well I don't mind anything about Shopify's rule and I think I can disclosed this vulnerability :D <br>
-Yup this is it and happy hacking!!!
+Yup that's it and happy hacking!!!
