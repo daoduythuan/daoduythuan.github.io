@@ -1,3 +1,7 @@
+---
+layout : post
+title : HITCON CTF 2019
+---
 HITCON CTF is a great hacking competition in CTF world.
 I solved 2 web challanges of Orange. So here is writeup.
 <h2>1. Virtual Public Network</h2>
@@ -47,3 +51,5 @@ Reference:
 <h2>Bounty Pl33z</h2>
 This is a XSS challenge. When I click submit bugs it will redirects to `https://<?=$host;?>/oauth/authorize?client_id=1&scope=read&redirect_uri=https://twitter.com/orange_8361`
 So using _${alert()}`-"-(`${`_ to trigger XSS, so setup a VPS and redirect challenge's network to get admin's cookie (=flag)
+
+Thank you for a great CTF!
